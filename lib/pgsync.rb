@@ -501,7 +501,7 @@ Options:}
       uri.scheme ||= "postgres"
       uri.host ||= "localhost"
       uri.port ||= 5432
-      uri.path = "/#{uri.path}" if uri.path && uri.path[0] != "/")
+      uri.path = "/#{uri.path}" if uri.path && uri.path[0] != "/"
       schema = CGI.parse(uri.query.to_s)["schema"][0] || "public"
       [uri, schema]
     end
